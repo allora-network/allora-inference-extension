@@ -2,7 +2,7 @@ import { Console } from "as-wasi/assembly";
 import { CgiCommand, cgiExtendsList } from "@blockless/sdk/assembly/cgi";
 import { memory } from "@blockless/sdk/assembly";
 import { buffer2string } from "@blockless/sdk/assembly/strings";
-// env UPSHOT_ARG_PARAMS=FOO BLS_LIST_VARS=UPSHOT_ARG_PARAMS
+// env ALLORA_ARG_PARAMS=FOO BLS_LIST_VARS=ALLORA_ARG_PARAMS
 let envVars = new memory.EnvVars().read().toJSON();
 if (envVars) {
 	let environmentValue = envVars.get("ALLORA_ARG_PARAMS");

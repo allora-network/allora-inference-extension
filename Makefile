@@ -1,10 +1,10 @@
-# Makefile for building the upshot-blockless-extension
+# Makefile for building the allora-inference-extension
 
 # Go parameters
 GOCMD=go
 GOBUILD=$(GOCMD) build
 GOCLEAN=$(GOCMD) clean
-BINARY_NAME=allora-offchain-extension
+BINARY_NAME=allora-inference-extension
 SOURCE_FILE=main.go
 
 # Detect the operating system and architecture
@@ -35,7 +35,6 @@ endif
 
 # Define the URL based on the detected OS and architecture
 RUNTIME_URL := https://github.com/blocklessnetwork/runtime/releases/download/v0.3.1/blockless-runtime.$(OS)-latest.$(ARCH).tar.gz
-
 all: build
 
 $(BINARY_NAME): $(SOURCE_FILE)

@@ -31,5 +31,5 @@ jobs:
         goarch: ${{ matrix.goarch }}
         goversion: "https://dl.google.com/go/go1.21.5.linux-amd64.tar.gz"
         project_path: "."
-        binary_name: "upshot-blockless-extension"
+        binary_name: "allora-inference-extension"
         extra_files: main.py README.md

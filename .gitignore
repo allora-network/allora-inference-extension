@@ -3,4 +3,4 @@ node_modules/
 build/
 .extsdb
 release.log
-upshot-blockless-extension
+allora-inference-extension
