@@ -57,3 +57,8 @@ Support
 -------
 
 For support, ensure that you have all the prerequisites installed and that your environment is set up correctly. If you encounter any issues, check the console output for error messages that may provide more information.
+
+In particular, you may need to install the blockless package:
+```
+ npm i -g @blockless/cli@<release-version>
+```

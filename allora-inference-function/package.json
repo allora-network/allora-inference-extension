@@ -1,5 +1,5 @@
 {
-  "name": "upshot-function-example",
+  "name": "allora-inference-function",
   "version": "1.0.0",
   "main": "index.js",
   "license": "APACHE-2.0",
@@ -14,6 +14,6 @@
     "assemblyscript": "^0.25.0"
   },
   "bls": {
-    "functionId": "blockless-function_upshot-function-example-1.0.0"
+    "functionId": "blockless-function_allora-inference-function-1.0.0"
   }
 }
