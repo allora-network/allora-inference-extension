@@ -1,5 +1,7 @@
-README for Allora Inference Extension
+Allora Inference Extension
 =====================================
+
+![Go!](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
 
 This document provides instructions on how to use the Makefile for building the extension.
 
