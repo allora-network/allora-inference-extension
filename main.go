@@ -90,8 +90,8 @@ func main() {
 	}
 
 	// Execute the Python script with arguments
-	cmdArgs := append([]string{scriptPath}, request.Arguments...)
-	cmdArgs = append(cmdArgs, request.TopicId)
+	cmdArgs := append([]string{scriptPath}, request.TopicId)
+	cmdArgs = append(cmdArgs, request.Arguments...)
 	cmd := exec.Command("python3", cmdArgs...)
 	stdoutStderr, err := cmd.CombinedOutput()
 	if err != nil {
