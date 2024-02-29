@@ -1,6 +1,8 @@
 README for Allora Inference Extension
 =====================================
 
+LATEST CID `bafybeia3nj2wtxhujad4u2qhlgducilhgun6ple32pgx37bivlf25j4z3m`
+
 This document provides instructions on how to use the Makefile for building the extension.
 
 Prerequisites

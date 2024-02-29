@@ -1,8 +1,14 @@
 import sys
 import random
-
-# Print all arguments sent to the script
-print("Arguments sent to the script:", sys.argv)
+import json
 
 random_number = random.randint(1, 100)
-print(random_number)
+
+ # Create Dictionary
+value = {
+    "number": random_number,
+    "arguments": sys.argv,
+}
+ 
+
+print(json.dumps(value))

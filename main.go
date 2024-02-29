@@ -13,14 +13,15 @@ import (
 
 // Verify structure for JSON output
 type Verify struct {
-	Alias        string `json:"alias"`
-	Description  string `json:"description"`
-	IsCGI        bool   `json:"is_cgi"`
+	Alias       string `json:"alias"`
+	Description string `json:"description"`
+	IsCGI       bool   `json:"is_cgi"`
 }
 
 // CGIExtensionRequest
 type CGIExtensionRequest struct {
 	Arguments []string `json:"arguments"`
+	TopicId   string   `json:"topicid"`
 }
 
 func main() {
@@ -30,9 +31,9 @@ func main() {
 
 	// Create the Verify struct
 	verify := Verify{
-		Alias:        "cgi-allora-infer",
-		Description:  "allora cgi extension for blockless runtime",
-		IsCGI:        true,
+		Alias:       "cgi-allora-infer",
+		Description: "allora cgi extension for blockless runtime",
+		IsCGI:       true,
 	}
 
 	// Check if the --ext_verify flag is set
@@ -82,11 +83,15 @@ func main() {
 		scriptPath = "/app/main.py"
 		if _, err := os.Stat(scriptPath); os.IsNotExist(err) {
 			scriptPath = "/app/runtime/extensions/main.py"
+			if _, err := os.Stat(scriptPath); os.IsNotExist(err) {
+				scriptPath = "./main.py"
+			}
 		}
 	}
 
 	// Execute the Python script with arguments
-	cmdArgs := append([]string{ scriptPath }, request.Arguments...)
+	cmdArgs := append([]string{scriptPath}, request.Arguments...)
+	cmdArgs = append(cmdArgs, request.TopicId)
 	cmd := exec.Command("python3", cmdArgs...)
 	stdoutStderr, err := cmd.CombinedOutput()
 	if err != nil {

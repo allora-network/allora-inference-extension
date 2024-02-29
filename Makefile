@@ -57,7 +57,7 @@ setup:
 	@echo "\n✅ Done.\n"
 
 test: example build
-	export ALLORA_ARG_PARAMS=yuga BLS_LIST_VARS=ALLORA_ARG_PARAMS; \
+	export ALLORA_ARG_PARAMS=yuga TOPIC_ID=1 BLS_LIST_VARS="ALLORA_ARG_PARAMS;TOPIC_ID"; \
 	/tmp/runtime/bls-runtime allora-inference-function/build/release.wasm - --drivers-root-path=$(PWD)
 
 .PHONY: all build clean example setup test
