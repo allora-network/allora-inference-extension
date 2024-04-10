@@ -4,8 +4,21 @@ import json
 
 # Create Dictionary
 value = {
-    "inferenceValue": str(random.randint(1, 100)), 
-    "forecastValue":  str(random.randint(1, 100))
+    "infererValue": str(random.randint(1, 100)), 
+    "forecasterValues":  [
+		{
+			"node":"allo1inf1",
+			"value":str(random.randint(1, 100))
+		},
+		{
+			"node":"allo1inf2",
+			"value":str(random.randint(1, 100))
+		},
+		{
+			"node":"allo1inf1111",
+			"value":str(random.randint(1, 100))
+		}
+	]
 }
 
 print(json.dumps(value))
