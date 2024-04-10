@@ -2,12 +2,10 @@ import sys
 import random
 import json
 
-# An inference example as a random number.
-random_number = random.randint(1, 100)
-
- # Create Dictionary
+# Create Dictionary
 value = {
-    "value": str(random_number)
+    "inferenceValue": str(random.randint(1, 100)), 
+    "forecastValue":  str(random.randint(1, 100))
 }
 
 print(json.dumps(value))
