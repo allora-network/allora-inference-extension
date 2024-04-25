@@ -4,7 +4,9 @@ Allora Inference Extension
 ![Go!](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
 ![Apache License](https://img.shields.io/badge/Apache%20License-D22128?style=for-the-badge&logo=Apache&logoColor=white)
 
-LATEST CID `bafybeigx43n7kho3gslauwtsenaxehki6ndjo3s63ahif3yc5pltno3pyq`
+LATEST CID
+v1 `bafybeigx43n7kho3gslauwtsenaxehki6ndjo3s63ahif3yc5pltno3pyq`
+v2 `bafybeifqs2c7ghellof657rygvrh6ht73scto3oznw4i747sqk3ihy7s5m`
 
 
 This document provides instructions on how to use the Makefile for building the extension.
