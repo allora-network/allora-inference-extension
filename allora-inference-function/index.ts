@@ -21,12 +21,11 @@ if (envVars) {
 					if (rs == true) {
 						const SEP = "\r\n";
 						let buf = new Array<u8>(1024);
-						let req = `{"arguments":["${defaultArgValue.toString()}"], "topicid":"${envTopicId.toString()}", "blockheight":"${alloraBlockHeightCurrent.toString()}"}`;
 						// optional
 						if (alloraBlockHeightEval) {
 							alloraBlockHeightEvalOptionalStr = alloraBlockHeightEval.toString();
 						}
-						req = `{"arguments":["${defaultArgValue.toString()}"], "topicid":"${envTopicId.toString()}", "blockheight":"${alloraBlockHeightCurrent.toString()}", "blockheighteval":"${alloraBlockHeightEvalOptionalStr}"}`;
+						let req = `{"arguments":["${defaultArgValue.toString()}"], "topicid":"${envTopicId.toString()}", "blockheight":"${alloraBlockHeightCurrent.toString()}", "blockheighteval":"${alloraBlockHeightEvalOptionalStr}"}`;
 						let req_len = req.length;
 						let head = `${req_len}${SEP}`;
 						command.stdinWriteString(head);
