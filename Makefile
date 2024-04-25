@@ -57,7 +57,12 @@ setup:
 	@echo "\n✅ Done.\n"
 
 test: example build
-	export ALLORA_ARG_PARAMS=yuga TOPIC_ID=1 BLS_LIST_VARS="ALLORA_ARG_PARAMS;TOPIC_ID"; \
+	echo "Testing the allora-inference-extension with all parameters..."
+	export ALLORA_ARG_PARAMS=ETH TOPIC_ID=1 ALLORA_BLOCK_HEIGHT_CURRENT=1714046786 ALLORA_BLOCK_HEIGHT_EVAL=1711368386 BLS_LIST_VARS="ALLORA_ARG_PARAMS;TOPIC_ID;ALLORA_BLOCK_HEIGHT_CURRENT;ALLORA_BLOCK_HEIGHT_EVAL"; \
+	/tmp/runtime/bls-runtime allora-inference-function/build/release.wasm - --drivers-root-path=$(PWD)
+	echo "Testing the allora-inference-extension with missing optional parameters..."
+	export ALLORA_ARG_PARAMS=ETH TOPIC_ID=1 ALLORA_BLOCK_HEIGHT_CURRENT=1714046786 BLS_LIST_VARS="ALLORA_ARG_PARAMS;TOPIC_ID;ALLORA_BLOCK_HEIGHT_CURRENT"; \
 	/tmp/runtime/bls-runtime allora-inference-function/build/release.wasm - --drivers-root-path=$(PWD)
 
+    
 .PHONY: all build clean example setup test
