@@ -20,8 +20,10 @@ type Verify struct {
 
 // CGIExtensionRequest
 type CGIExtensionRequest struct {
-	Arguments []string `json:"arguments"`
-	TopicId   string   `json:"topicid"`
+	Arguments       []string `json:"arguments"`
+	TopicId         string   `json:"topicid"`
+	BlockHeight     string   `json:"blockheight"`
+	BlockHeightEval string   `json:"blockheighteval"`
 }
 
 func main() {
@@ -90,7 +92,9 @@ func main() {
 	}
 
 	// Execute the Python script with arguments
-	cmdArgs := append([]string{scriptPath}, request.TopicId)
+	cmdArgs := append([]string{scriptPath}, request.TopicId, request.BlockHeight)
+	// Could be empty, but we still need to pass it to comply number of args
+	cmdArgs = append(cmdArgs, request.BlockHeightEval)
 	cmdArgs = append(cmdArgs, request.Arguments...)
 	cmd := exec.Command("python3", cmdArgs...)
 	stdoutStderr, err := cmd.CombinedOutput()
